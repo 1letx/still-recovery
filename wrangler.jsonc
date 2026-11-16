@@ -1,0 +1,13 @@
+{
+  // Cloudflare Worker that serves the static app in ./public.
+  // There is no Worker script: requests never run custom code, nothing is logged
+  // by us, and all user data stays in the visitor's browser (localStorage).
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "still-recovery",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

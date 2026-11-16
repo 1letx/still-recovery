@@ -1,0 +1,26 @@
+### Relevant Sources
+
+**Sleep Duration, Health Outcomes, and Hygiene**  
+- Watson NF, Badr MS, Belenky G, et al. Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society. *Journal of Clinical Sleep Medicine*. 2015;11(6):591–592. American Academy of Sleep Medicine (AASM) / Sleep Research Society (SRS). [https://jcsm.aasm.org/doi/10.5664/jcsm.4758](https://jcsm.aasm.org/doi/10.5664/jcsm.4758) (also published in *SLEEP*, 2015).  
+- National Heart, Lung, and Blood Institute (NHLBI), National Institutes of Health (NIH). Sleep Deprivation and Deficiency: How Much Sleep Is Enough. Updated 2022. NIH/NHLBI. [https://www.nhlbi.nih.gov/health/sleep-deprivation/how-much-sleep](https://www.nhlbi.nih.gov/health/sleep-deprivation/how-much-sleep).  
+- Li J, Cao D, Huang Y, et al. Sleep duration and health outcomes: an umbrella review. *Sleep & Breathing*. 2022;26:1479–1492. (Peer-reviewed meta-analyses synthesis). [https://doi.org/10.1007/s11325-021-02458-1](https://doi.org/10.1007/s11325-021-02458-1).  
+- American Academy of Sleep Medicine (AASM). Healthy Sleep Habits. Sleep Education by the AASM. Updated ~2021. AASM. [https://sleepeducation.org/healthy-sleep/healthy-sleep-habits/](https://sleepeducation.org/healthy-sleep/healthy-sleep-habits/).  
+
+**Exercise and Physical Activity (Resistance, Aerobic, HIIT, Walking)**  
+- Currier BS, et al. (ACSM Position Stand). Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults: An Overview of Reviews. *Medicine & Science in Sports & Exercise*. 2026;58(4):851–872. American College of Sports Medicine (ACSM). [https://acsm.org/resistance-training-guidelines-update-2026/](https://acsm.org/resistance-training-guidelines-update-2026/) (DOI: 10.1249/MSS.0000000000003897).  
+- Paluch AE, Boyer WR, Franklin BA, et al. Resistance Exercise Training in Individuals With and Without Cardiovascular Disease: 2023 Update: A Scientific Statement From the American Heart Association. *Circulation*. 2024. American Heart Association (AHA). [https://www.ahajournals.org/doi/10.1161/CIR.0000000000001189](https://www.ahajournals.org/doi/10.1161/CIR.0000000000001189).  
+- World Health Organization (WHO). WHO Guidelines on Physical Activity and Sedentary Behaviour. Geneva: WHO; 2020. WHO. [https://www.who.int/publications/i/item/9789240015128](https://www.who.int/publications/i/item/9789240015128) (and related fact sheets).  
+
+**Nutrition (Protein and Intermittent Fasting / Time-Restricted Eating)**  
+- Jäger R, Kerksick CM, Campbell BI, et al. International Society of Sports Nutrition Position Stand: protein and exercise. *Journal of the International Society of Sports Nutrition*. 2017;14:20. International Society of Sports Nutrition (ISSN). [https://doi.org/10.1186/s12970-017-0177-8](https://doi.org/10.1186/s12970-017-0177-8) (PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/).  
+- Hua Y, et al. Intermittent fasting for weight management and metabolic health: An updated comprehensive umbrella review of health outcomes. *Diabetes, Obesity and Metabolism*. 2025. (Umbrella review of meta-analyses). [https://doi.org/10.1111/dom.16092](https://doi.org/10.1111/dom.16092).  
+- Related umbrella/network meta-analyses on intermittent fasting metabolic outcomes (e.g., *BMC Medicine*, 2024; *eClinicalMedicine*, 2024). Multiple peer-reviewed syntheses supporting time-restricted eating effects primarily in overweight/obese adults.  
+
+**Meditation, Cold Exposure, and Related**  
+- Systematic review on Vipassana meditation health impacts (psychological, physiological, neurobiological outcomes). Published ~2025 (PubMed-indexed synthesis of studies since 2010). (Moderate evidence for stress/anxiety reduction; intensity-dependent effects). [https://pubmed.ncbi.nlm.nih.gov/41158896/](https://pubmed.ncbi.nlm.nih.gov/41158896/).  
+- Systematic reviews/meta-analyses on cold-water immersion (mood, stress, recovery; e.g., Frontiers in Physiology 2026 and related). Evidence limited/heterogeneous for sustained psychological benefits; clearer for acute responses.  
+
+**Wearables and Sleep Tracking Validation**  
+- Svensson T, Madhawa K, Nt H, Chung U, Svensson AK. Validity and reliability of the Oura Ring Generation 3 (Gen3) with Oura sleep staging algorithm 2.0 (OSSA 2.0) when compared to multi-night ambulatory polysomnography: A validation study of 96 participants and 421,045 epochs. *Sleep Medicine*. 2024;115:251–263. (University-affiliated validation vs. PSG; Oura-related support noted). [https://doi.org/10.1016/j.sleep.2024.01.020](https://doi.org/10.1016/j.sleep.2024.01.020) (PubMed: 38382312).  
+
+These sources are ordered by primary topic relevance within each category and prioritize consensus guidelines, position stands, umbrella reviews, and direct validation studies from major medical/scientific organizations. Links point to free full-text or abstract pages where available.

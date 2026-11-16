@@ -1,0 +1,269 @@
+**Tracking in this app is deliberately quiet and mostly automatic.**
+
+It leans on Apple Watch + HealthKit for the heavy lifting (sleep stages, HRV, resting heart rate, workouts, steps) and only asks for the few things the Watch cannot know. The goal is Oura-style trend awareness without a second wearable or constant attention.
+
+### Sleep Tracking
+- **Automatic (Watch)**: Total sleep time, sleep stages (Core / Deep / REM / Awake), efficiency, onset latency estimate, and consistency of bedtime/wake time. The app reads the Watch’s native sleep analysis.
+- **Manual fallback (CBT-i style diary)**: Only if needed — time into bed, lights out, final wake, out of bed, number of awakenings. The app calculates sleep efficiency and latency transparently.
+- **Presented as**: One large number (sleep opportunity or efficiency) + a small trend (last 7–14 nights). Stage breakdown is available but secondary, because Apple Watch stage accuracy is imperfect.
+- Supports the “11–12 hours in bed is fine if thinking is useful” idea by separating time in bed from actual sleep.
+
+### Recovery / Readiness Tracking
+- **Automatic**: HRV (overnight or morning), resting heart rate, respiratory rate, and recent sleep. Optional: wrist temperature trend if the Watch provides it.
+- **Calculated simply**: A single daily indicator (Ready / Easy / Rest) based on deviation from your personal baseline. No opaque “body battery” score that cannot be explained.
+- Shown on the Today screen and as a Watch complication. Trends only — never a single-night verdict.
+
+### Training Tracking
+- **Automatic**: Apple Watch workouts (strength, cardio, HIIT) are pulled in.
+- **Manual but fast**: Set logging on the Watch or phone (weight × reps). The app shows “last time” for progressive overload.
+- Supports rotating push/pull/legs templates, bodyweight volume (push-ups/squats), or the 7-minute circuit so you start without deciding.
+- Weekly volume and recovery overlay from sleep/HRV.
+
+### Nutrition & Fasting Tracking
+- **Mostly manual but minimal**: Protein-first logging (and calories if wanted). Fasting window is a simple visible timer.
+- Defaults bias toward the foods you listed (red meat, seafood, greens, vegetables). Micronutrients (including vitamin D context) stay behind a toggle.
+- No daily nagging. Just remaining protein or “window open/closed.”
+
+### Other Habits
+- Meditation / breathwork sessions logged automatically when you use the in-app timer (and can write Mindful Minutes to Health).
+- Walks and sunlight exposure can pull step data or be one-tap noted.
+- Journaling is optional and local only.
+
+### Design Rules for Tracking
+- Almost everything is automatic or one-tap.
+- Only three numbers are prominent on any day: sleep efficiency/opportunity, recovery status, and protein remaining (or training for the day).
+- Trends over 7–14 nights matter more than any single night.
+- All data stays on-device and syncs through Apple Health. No account required.
+- The interface never becomes another source of stimulation at night.
+
+This is the Oura-like experience rebuilt for the Apple Watch you already own: instrumented recovery, strong sleep emphasis, and minimal decisions. The tracking serves the system instead of becoming the system.
+
+Would you like the exact data fields shown on the Today screen, how the recovery calculation works in plain language, or how the Watch sleep and workout logging would feel in practice?
+
+Here’s an updated design for the app that absorbs the principles you listed.
+
+### Core Idea
+**A quiet, on-device recovery and consistency coach** for iOS + Apple Watch.  
+It treats sleep as non-negotiable instrumented recovery, removes trivial decisions, and supports high-protein / strength / fasting / meditation habits without adding noise. Black, white, and soft grays only. Extremely little UI.
+
+Name working title: **Still** or **Nexus**.
+
+### Non-Negotiable Principles the App Enforces Softly
+- Sleep opportunity is protected first (target 8+ hours of opportunity; early, consistent bed/wake).
+- Training is scheduled and simple (push / pull / legs rotation + short cardio or 7-minute circuit).
+- Nutrition defaults to high protein + whole foods; fasting windows are visible but not nagged.
+- Cognitive clarity tools (meditation, journaling, digital boundaries) are one-tap.
+- Everything else is secondary.
+
+### Main Screens (4 tabs)
+
+**1. Today** (home – the only screen most people need)
+- Large last-night sleep block: total sleep, efficiency, deep + REM trend (Oura-style, but honest about Apple Watch limitations).
+- Tonight’s recommended bedtime window (based on recent efficiency + fixed wake time).
+- One-line recovery indicator (HRV + sleep + resting HR trend → “Ready / Easy / Rest”).
+- Today’s training card (pre-filled push/pull/legs or “300 push-ups + 300 squats” or 7-minute circuit).
+- Fasting window status (simple timer or “eating window open”).
+- One-tap “Breathe / Meditate” (Vipassana-style timer or short breathwork).
+
+**2. Sleep**
+- Automatic Watch sleep stages + manual diary fallback (CBT-i style fields).
+- Sleep opportunity vs actual sleep (supports the “11–12 hours in bed, thinking is useful” idea without punishing it).
+- Stimulus-control reminder only if awake >20 min in bed.
+- Cold, dark, early-bed checklist (optional, one-time setup).
+- Trends: consistency of wake time, efficiency, deep/REM (7–14 night view).
+
+**3. Train**
+- Simple rotation: Push / Pull / Legs (or full body 3–4×).
+- Watch-first set logging (weight × reps).
+- “Last time” reference for progressive overload.
+- Quick options: 7-minute HIIT circuit, kettlebell, or bodyweight volume (push-ups/squats).
+- Weekly volume and recovery overlay from sleep/HRV.
+
+**4. Eat**
+- Default view: protein remaining + calories (or just protein if in fasting mode).
+- Fasting window timer (6-hour or OMAD).
+- Fast logging of red meat / seafood / greens / vegetables / berries.
+- Micronutrient toggle only when wanted (vitamin D context, etc.).
+- No social, no streaks that shame.
+
+### Apple Watch Focus
+- Complications: sleep score, recovery, next training, fasting status.
+- Breathe/meditate sessions with haptics (eyes closed).
+- Set logging during workouts.
+- Sleep detection uses the Watch’s own data (no extra hardware).
+
+### How It Supports the Specific Habits
+- **Sleep as foundation**: Surfaces only efficiency + consistency. Does not over-interpret imperfect stage data.
+- **Lying awake thinking**: The app does not treat time in bed as failure. It distinguishes sleep opportunity from sleep.
+- **Morning volume / discipline work**: One-tap logging for 300 push-ups + 300 squats or the 7-minute circuit.
+- **Strength 3–6× week**: Pre-built rotating templates so you open the app and start, not decide.
+- **Intermittent fasting**: Simple window visibility. Structure reduces decisions.
+- **High protein + whole foods**: Protein-first logging. Food database biased toward meat, seafood, greens, vegetables.
+- **Meditation / journaling**: Dedicated short timers (morning + evening). Optional journaling prompt after.
+- **Sunlight / walking**: Can note “walked” or pull step data; no extra tracking required.
+- **Minimal decisions**: Almost everything is pre-filled or one-tap. The app assumes the system, not daily choice.
+
+### Technical & Open-Source Direction
+Strongest existing foundations to fork or combine:
+- Sleep/recovery: [0xCodez/pulsr](https://github.com/0xCodez/pulsr)
+- Workout + Watch: [ischys-app/Ischys](https://github.com/ischys-app/Ischys) or [karimknaebel/Iron](https://github.com/karimknaebel/Iron)
+- Breathing/meditation: [eddmann/Ovlo](https://github.com/eddmann/Ovlo) or [codeanurag/iBreathe](https://github.com/codeanurag/iBreathe)
+- CBT-I diary math: [Sreenivas-Sadhu-Prabhakara/sleepbook](https://github.com/Sreenivas-Sadhu-Prabhakara/sleepbook)
+- Nutrition: [maksimowiczm/FoodYou](https://github.com/maksimowiczm/FoodYou)
+
+The finished app stays strictly monochrome, on-device, and quiet. It instruments recovery and removes decisions; it does not become another source of stimulation or optimization anxiety.
+
+Would you like a detailed wireframe description of the Today screen, the Sleep diary flow, or the Watch workout/breathing session next? Or a short technical outline of how the HealthKit + Watch pieces would fit together?
+
+Here are the most relevant open-source GitHub repositories that map to the features you want (sleep + CBT-I style tools, breathing/meditation, strength training, nutrition, and strong Apple Health/Watch integration).
+
+### Sleep Tracking & CBT-I Style Tools
+These are the closest to AutoSleep + CBT-i Coach logic:
+
+- **[0xCodez/pulsr](https://github.com/0xCodez/pulsr)**  
+  Open-source recovery, strain, and sleep coach for Apple Watch. On-device, no subscription. Reads HealthKit (sleep stages, HRV, etc.) and generates actionable scores. Strong Watch integration. One of the best modern starting points for sleep + recovery.
+
+- **[ga-142/sleep-tracker](https://github.com/ga-142/sleep-tracker)**  
+  Private self-hosted sleep diary with explicit CBT-I metrics (efficiency, latency, etc.), date filtering, and exports. Clean and focused on the clinical diary side.
+
+- **[Sreenivas-Sadhu-Prabhakara/sleepbook](https://github.com/Sreenivas-Sadhu-Prabhakara/sleepbook)**  
+  Client-side CBT-I sleep diary that correctly calculates sleep onset latency, total sleep time, and sleep efficiency. Shows the formulas. Lightweight and transparent.
+
+- **[rickytang666/sneuz](https://github.com/rickytang666/sneuz)**  
+  iOS sleep tracker with Shortcuts automation + HealthKit export. Useful for automatic tracking tied to Sleep Focus.
+
+### Breathing & Meditation
+Closest to Breathwrk / Calm / Headspace breathing tools:
+
+- **[eddmann/Ovlo](https://github.com/eddmann/Ovlo)**  
+  Breathing and meditation app for iPhone **and Apple Watch**. Guided breathing with animation, haptics, customizable timing, and ambient options. Very relevant for Watch-first design.
+
+- **[codeanurag/iBreathe](https://github.com/codeanurag/iBreathe)**  
+  Mindful breathing app (SwiftUI) for Apple Watch + iPhone. Haptic guidance, session logging, WatchConnectivity sync. Simple and focused.
+
+- **[jithware/brethap](https://github.com/jithware/brethap)**  
+  Breathing + meditation timer with presets (including 4-7-8, physiological sigh). Session history and stats. Cross-platform (with some iOS limitations).
+
+- **[heylinda/heylinda-app](https://github.com/heylinda/heylinda-app)**  
+  Open-source free meditation app (React Native). Larger library of sessions; good reference for structure even if you keep the UI minimal.
+
+### Strength Training (Hevy-style)
+- **[karimknaebel/Iron](https://github.com/karimknaebel/Iron)**  
+  Free, modern weightlifting tracker for iOS (SwiftUI). Strong option for set logging, history, and progressive overload.
+
+- **[ischys-app/Ischys](https://github.com/ischys-app/Ischys)**  
+  On-device workout tracker for iPhone + Apple Watch. No account, no server. Routines, progressive overload, HealthKit. Excellent privacy and Watch focus.
+
+- **[danielkuhlwein/strength-training](https://github.com/danielkuhlwein/strength-training)** (UpLift)  
+  Native SwiftUI workout tracker with progress charts, last-session reference, and iCloud sync.
+
+- **[DuarteSantos8/openGym](https://github.com/DuarteSantos8/openGym)**  
+  Open-source gym tracker (iPhone + Apple Watch). Can import from Hevy/Strong. Self-hostable or local.
+
+### Nutrition (Cronometer-style)
+- **[maksimowiczm/FoodYou](https://github.com/maksimowiczm/FoodYou)**  
+  Privacy-focused food diary with full nutrition tracking (macros + micronutrients), Open Food Facts + USDA integration. Strong open-source option.
+
+- **[tcriess/dietry](https://github.com/tcriess/dietry)**  
+  Flutter nutrition tracker with HealthKit import, goals, and macro tracking. Cross-platform.
+
+- **[myint/cronometer](https://github.com/myint/cronometer)**  
+  Fork of the older open-source Cronometer (Java). Useful for understanding the data model and USDA database handling, though not modern iOS.
+
+### Other Useful References
+- **[wger-project/wger](https://github.com/wger-project/wger)** — Mature self-hosted fitness + nutrition + workout platform (backend-heavy, but solid exercise/nutrition data).
+- **[Padasdaf/Sleep-Trigger](https://github.com/Padasdaf/Sleep-Trigger)** — Real-time sleep detection on Apple Watch with automation hooks.
+
+### Recommended Starting Stack for Your Concept
+If you want to build or fork something close to the black-and-white “Nexus” idea:
+
+1. **Base**: Pulsr (sleep + recovery + Watch) or Ischys (workout + HealthKit + Watch)
+2. **Breathing layer**: Ovlo or iBreathe
+3. **Sleep diary / CBT-I metrics**: sleepbook or ga-142/sleep-tracker
+4. **Nutrition**: FoodYou or dietry
+5. **UI direction**: Keep everything strictly monochrome (black / off-white / gray) and surface only the 2–3 most useful numbers on the Today screen.
+
+None of these is a single app that already combines everything you described, but Pulsr + Ischys + Ovlo + FoodYou (or the CBT-I diary repos) form the strongest practical foundation for a minimal, on-device, Apple-centric open-source app.
+
+Would you like me to dig deeper into any specific repo (architecture, how it uses HealthKit, Watch support, or licensing)? Or help sketch how you might combine two of them?
+
+Here’s a clear conceptual design for that single, simple, open-source app.
+
+### Name (working)
+**Nexus** (or **Still** / **One** — short, neutral, memorable)
+
+### Core Philosophy
+One calm place that quietly collects Apple Health + Watch data and gives you only the tools that actually move the needle: sleep behavior, breathing, strength, and nutrition. No social feed, no streaks that shame you, no bright colors. Everything is black, white, and soft grays. Extremely little UI chrome.
+
+### Visual Language
+- Background: pure black (`#000000`) or off-black (`#0A0A0A`)
+- Text: off-white (`#F5F5F5`) primary, medium gray (`#A0A0A0`) secondary
+- Accents: only thin white or light-gray lines and subtle fills
+- Typography: SF Pro (or system) with generous spacing, large numbers, small labels
+- Interactions: almost no buttons — mostly large tappable cards, bottom sheet details, and haptic feedback
+- Dark mode only (or automatic that stays near-black)
+
+### Main Structure (4 primary tabs)
+
+**1. Today** (home)
+- Large sleep score / last night summary at top (pulled from Watch + AutoSleep-style logic)
+- Tonight’s recommended bedtime window (CBT-i Coach style, based on recent sleep efficiency)
+- One-tap “Breathe” card (opens a simple 3–5 min guided session with Watch haptics)
+- Next workout (Hevy-style, if scheduled)
+- Quick nutrition remaining (calories + protein only by default)
+
+**2. Sleep**
+- Automatic sleep detection (Watch) + manual diary fallback (CBT-i Coach style)
+- Simple sleep efficiency % and onset latency trend (last 7–14 nights)
+- Stimulus control helper: “If awake >20 min → get up” reminder with a one-tap low-light timer
+- Short guided wind-down (breathing or body scan) that ends when you fall asleep or dismiss
+- Consistent wake-time lock (most important CBT-i rule)
+
+**3. Move** (strength + activity)
+- Hevy-like workout logger optimized for Apple Watch (log sets from the wrist)
+- Minimal exercise library with progressive overload tracking
+- Recovery view powered by Watch HRV + sleep (simple “ready / easy / rest” indicator)
+- No complex programming — just “last time you did this” and “suggested next”
+
+**4. Eat**
+- Cronometer-level database quality for micronutrients (optional advanced view)
+- Fast logging: barcode + recent foods + voice
+- Daily targets that adapt gently from weight trend + Apple Watch energy (MacroFactor-inspired, simplified)
+- Protein and calorie rings as the default view; full micronutrients behind a single toggle
+
+### Breathing / Meditation Layer
+Accessible from Today or Sleep, not a separate tab:
+- Simple breathing timer with haptic guidance on Watch (Breathwrk style)
+- 4–6 short presets: longer-exhale (relaxation), box, 4-7-8, resonance
+- Optional 5–10 min guided sessions (Calm/Headspace style) focused on pre-sleep arousal and body awareness
+- No long courses — just the highest-utility sessions
+
+### Apple Integration (non-negotiable)
+- Reads and writes to Apple Health (sleep, workouts, HRV, weight, nutrition)
+- Full Apple Watch app for: breathing sessions, set logging, sleep diary check-in
+- Uses Watch complications and widgets sparingly (sleep score, next breath session)
+- Respects Sleep Focus and Fitness rings
+
+### Open Source Approach
+Look on GitHub for existing foundations rather than starting from zero:
+- Sleep: projects around HealthKit sleep analysis
+- Workouts: open-source strength trackers
+- Nutrition: Cronometer-inspired or open food databases
+- Breathing: simple timer + haptic projects
+
+A realistic path is to fork or combine:
+- An existing HealthKit-centric open-source app
+- A simple Watch breathing timer
+- A lightweight workout logger
+
+Then apply the strict black-and-white UI and remove everything non-essential.
+
+### What Makes It Extremely Useful
+- It surfaces only three numbers that matter most on any given day: sleep efficiency, protein remaining, and recovery status.
+- Everything else is one tap away.
+- It actively supports the behavioral rules that improve sleep (consistent wake time, stimulus control, reduced sleep effort) instead of just tracking.
+- Zero visual noise so it doesn’t become another source of stimulation at night.
+
+Would you like me to expand any specific screen (Today, Sleep diary, Watch breathing session, or workout logging) into a more detailed layout description? Or help outline the technical architecture (HealthKit + WatchKit + open data sources)?
+
+The core ideas are: Non-negotiable ~8 hours, not stay up very late and treats sleep as instrumented recovery. Train 3 to 4 times a week trength, conditioning, mobility. high protein in the morning; and vitamin D in some contexts but has not detailed a full public stack. Minimizes trivial decisions. ~30 minutes cardio + ~45 minutes weightlifting/resistance training (rotating pull, push, and leg days). higher protein, whole foods, lean proteins, vegetables, and healthy fats. 11–12 hours in bed (not all sleep). Much of the time is lying awake thinking; he values this for ideas. 300 push-ups + 300 squats every morning (for self-discipline more than pure physique change—“once you push through, it becomes easier to tackle other work-related tasks”). Gym 5–6 times/week for 1–2 hours. Intermittent fasting (often 6-hour eating window or once daily; sometimes OMAD). Primary calories from red meat, seafood and vegetables; berries/fruit allowed if needed. Structure from fasting reduces cravings. Extreme consistency builds the “muscle of self-discipline,” which he sees as foundational. Protecting cognitive clarity by avoiding addictive substances and distractions. Long recovery windows support idea generation. Tracks with Oura-like app (REM, deep sleep). Early bed; cold, dark room. Fasting helps him fall asleep faster and sleep deeper. walk to work (brisk, ~1h15min, listening to podcasts/audiobooks or thinking; sunlight exposure). Daily “7-minute workout” (HIIT bodyweight circuit via the Seven app; sometimes multiple times). Occasional kettlebells, Morning cold exposure. protein (fish, chicken, or steak) + large greens (arugula/spinach/kale) + vegetables (asparagus/Brussels sprouts). Dessert: berries or dark chocolate; occasional red wine. Morning: ~28 oz water (sometimes lemon + Himalayan salt). 1 hour Vipassana meditation morning + evening (long-term practitioner). Journaling. Themed days for different work areas. Minimalism and digital boundaries. emphasize sleep as non-negotiable foundation for cognition, mood, and recovery (supported by consensus guidelines of 7–9 hours and links to decision quality, immune function, and metabolic health). Wearables like Oura provide trend data (heart rate, temperature, movement) that correlate reasonably with total sleep time vs. lab polysomnography, though stage accuracy is imperfect and not medical-grade. (In this case we need to create an oura version app but for Ios AND Apple watch.)
